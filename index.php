@@ -1,9 +1,22 @@
-// blog.php
+<?php
 $posts = [
-    ['title' => 'First Post', 'content' => 'This is my first post.'],
-    ['title' => 'Second Post', 'content' => 'This is my second post.']
+    'post1.php' => 'First Post',
+    'post2.php' => 'Second Post'
 ];
-foreach ($posts as $post) {
-    echo "<h2>{$post['title']}</h2>";
-    echo "<p>{$post['content']}</p>";
-}
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+</head>
+<body>
+    <h1>My Blog</h1>
+    <ul>
+        <?php foreach ($posts as $file => $title): ?>
+            <li><a href="posts/<?php echo $file; ?>"><?php echo $title; ?></a></li>
+        <?php endforeach; ?>
+    </ul>
+</body>
+</html>
